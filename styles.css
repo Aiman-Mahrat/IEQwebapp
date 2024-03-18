@@ -1,0 +1,764 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+/* fonts */
+@font-face {
+    font-family: "Poppins";
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+html {
+    font-size: 100%;
+}
+
+:root {
+    /* Colors */
+    /* primary */
+    --primary-100: #ccd6e3;
+    --primary-200: #99aec7;
+    --primary-300: #6685ab;
+    --primary-400: #335d8f;
+    --primary-500: #003473;
+    --primary-600: #002a5c;
+    --primary-700: #001f45;
+    --primary-800: #00152e;
+    --primary-900: #000a17;
+    /* grey */
+    --grey-100: #f1f5f9;
+    --grey-200: #e2e8f0;
+    --grey-300: #cbd5e1;
+    --grey-400: #94a3b8;
+    --grey-500: #64748b;
+    --grey-600: #475569;
+    --grey-700: #334155;
+    --grey-800: #1e293b;
+    --grey-900: #0f172a;
+
+    --black: #222;
+    --white: #fff;
+    --red-light: #f8d7da;
+    --red-dark: #842029;
+    --green-light: #d1e7dd;
+    --green-dark: #0f5132;
+    --tempbar-color: #AD1F2D;
+    --pressbar-color: #AD1F2D;
+    --humidbar-color: #AD1F2D;
+    --red-med: #AD1F2D;
+    --green-med: #247F36;
+    --yellow-med: #FFB833;
+
+    /* Fonts */
+    --headingFont: 'Poppins', sans-serif;
+    --bodyFont: 'Poppins', sans-serif;
+    --smallText: 0.7em;
+
+    /* Vars */
+    --backgroundColor: var(--grey-100);
+    --textColor: var(--black);
+    --borderRadius: 0.25rem;
+    --letterSpacing: 1px;
+    --transitionfast: 0.3s ease-in-out all;
+    --transitionslow: 0.5s ease-in-out all;
+    --transition-delay: 500ms;
+    --max-width: 1120px;
+    --fixed-width: 600px;
+    --temp_rating: 1;
+    --press_rating: 1;
+    --humid_rating: 1;
+
+    /* box shadow */
+    --shadow-1: box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-2: box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-3: box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-4: box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/*16px*/
+
+body {
+    background: var(--backgroundColor);
+    font-family: var(--bodyFont);
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--textColor);
+}
+
+p {
+    margin: 0 auto;
+    max-width: 25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    font-family: var(--headingFont);
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: capitalize;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 3.052rem;
+}
+
+h2 {
+    font-size: 2.441rem;
+}
+
+h3 {
+    font-size: 1.953rem;
+}
+
+h4 {
+    font-size: 1.563rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+small,
+.text-small {
+    font-size: var(--smallText);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* buttons */
+.btn {
+    pointer-events: auto;
+    cursor: pointer;
+    color: var(--black);
+    background: var(--grey-200);
+    border: transparent;
+    border-radius: var(--borderRadius);
+    letter-spacing: var(--letterSpacing);
+    padding: 0.375rem 0.75rem;
+    box-shadow: var(--shadow-1);
+    transition: var(--transitionfast);
+    text-transform: capitalize;
+    display: inline-block;
+}
+.btn:hover {
+    background: var(--grey-400);
+}
+
+.btn-hipster {
+    color: var(--primary-500);
+    background: var(--primary-200);
+}
+
+.btn-hipster:hover {
+    color: var(--primary-200);
+    background: var(--primary-700);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Fonawesome Buttons Special Style */
+.link-buttons {
+    background: var(--backgroundColor);
+    cursor: pointer;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    transition: var(--transitionfast);
+}
+.link-buttons:hover {
+    color: var(--grey-600);
+}
+
+.alert {
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1rem;
+    border-color: transparent;
+    border-radius: var(--borderRadius);
+}
+
+.alert-danger {
+    color: var(--red-dark);
+    background: var(--red-light);
+}
+
+.alert-success {
+    color: var(--green-dark);
+    background: var(--green-light);
+}
+
+.form {
+    width: 90vw;
+    max-width: var(--max-width);
+    background: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow-2);
+    padding: 2rem 2.5rem;
+    margin: 3rem auto;
+}
+
+.form-label {
+    display: block;
+    font-size: var(--smallText);
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--borderRadius);
+    background: var(--primary-100);
+    border: 1px solid var(--grey-200);
+}
+
+.form-row {
+    margin-bottom: 1rem;
+
+}
+
+.form-textarea {
+    height: 7rem;
+}
+
+::placeholder {
+    font-family: inherit;
+    color: var(--grey-400);
+}
+
+.form-alert {
+    color: var(--red-dark);
+    letter-spacing: var(--letterSpacing);
+    text-transform: capitalize;
+}
+
+/* alert */
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    width: 5rem;
+    height: 5rem;
+    border: 5px solid var(--grey-400);
+    border-radius: 50%;
+    border-top-color: var(--primary-500);
+    animation: spinner 0.6s linear infinite;
+}
+
+.loading {
+    margin: 0 auto;
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav-center {
+    width: 90vw;
+    max-width: var(--max-width);
+}
+
+.nav-header {
+    height: 6rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    justify-content: center;
+    overflow: hidden;
+    transition: var(--transitionfast);
+}
+.links{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--grey-500);
+}
+
+.show-links {
+    height: 200px;
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--grey-900);
+    letter-spacing: var(--letterSpacing);
+    padding: 1rem 0;
+    transition: var(--transitionfast);
+}
+
+.nav-link:hover {
+    color: var(--grey-600);
+}
+
+@media screen and (min-width:992px) {
+    .nav-btn {
+        display: none;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .navbar {
+        height: 6rem;
+    }
+
+    .nav-center {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-header {
+        height: auto;
+        margin-right: 2rem;
+    }
+
+    /* since links wont show if the button is not toggled because height is set to 0 in the nav-links class, we fix that by modifying that below */
+    .links{
+        /* width: 100%; */
+        align-items: center;
+        border-top: none;
+    }
+    .nav-links {
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        /* nav-center has empty space on the right, we want the nav-links to occupy that space so we do: */
+        width: 100%;
+    }
+    .nav-link {
+        padding: 0;
+        border-top: none;
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/*
+=============== 
+Measurands
+===============
+*/
+
+.container {
+    pointer-events: none;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.climate-data {
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - (6rem));
+}
+
+.temperature,
+.pressure,
+.humidity {
+    pointer-events: auto;
+    display: block;
+    width: 90%;
+    background: var(--grey-200);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 0 #141414;
+    border-style: solid;
+    border-color: rgb(20 20 20);
+    transition: var(--transitionslow);
+}
+.temp-warning,
+.press-warning,
+.humid-warning {
+    pointer-events: none;
+    transform: translate(0.7rem, 0.7rem);
+}
+.temp-warning{
+    color: var(--tempbar-color);
+}
+.press-warning {
+    color: var(--pressbar-color);
+}
+.humid-warning {
+    color: var(--humidbar-color);
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+table {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+tr {
+    display: none;
+    margin: 0 auto;
+    opacity: 0;
+    transition: none;
+}
+td {
+    text-align: center;
+}
+.rating {
+    display: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.rating h1{
+    display: flex;
+    justify-content: center;
+    transition: var(--transitionslow);
+}
+.card-info {
+    transition: var(--transitionslow);
+}
+.card_value {
+    display: flex;
+    font-size: 1.953rem;
+    justify-content: center;
+}
+.card-info h1 {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.temperature.active,
+.pressure.active,
+.humidity.active {
+    width: 90%; /*This is kept even tho default is already 90% because desktop utilizes click expand to 90%*/
+
+}
+.temperature.active .card-info,
+.pressure.active .card-info,
+.humidity.active .card-info {
+    transition: var(--transitionslow);
+}
+.temperature.active .rating,
+.pressure.active .rating,
+.humidity.active .rating {
+    display: block;
+    flex-basis: 100%;
+}
+.temperature.active tr,
+.pressure.active tr,
+.humidity.active tr {
+    display: table-row;
+    visibility: visible; /*visiblity is set to visible when both hovering and clicking
+    but display is only set to table-row when clicking because desktop display is set to table-row to perserve transition*/
+    opacity: 100%;
+    transition: var(--transitionslow);
+    transition-delay: 0.6s;
+}
+
+@keyframes fade-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+/*
+=============== 
+Progress Bar
+===============
+*/
+
+.progress-container{
+    height: 10px;
+    width: 0%;
+    border-radius: 1.5rem;
+    background-color: var(--grey-200);
+    border-style: solid;
+    border-color: rgb(20 20 20);
+    border-width: 2px;
+    margin: 0 auto;
+}
+.temperature:hover .progress-container, .temperature.active .progress-container,
+.pressure:hover .progress-container, .pressure.active .progress-container,
+.humidity:hover .progress-container, .humidity.active .progress-container  {
+    width: 100%;
+}
+
+.temperature .progress-bar {
+    height: 100%;
+    border-radius: 1.5rem;
+    background-color: var(--red-med);
+    animation: tempprogress-animation 2s forwards;
+}
+
+@keyframes tempprogress-animation {
+    0% {
+        width: 0%;
+        background-color: var(--red-med);
+    }
+    100% {
+        width: calc(var(--temp_rating)*10%);
+        background-color: var(--tempbar-color);
+    }
+}
+
+.pressure .progress-bar {
+    height: 100%;
+    border-radius: 1.5rem;
+    background-color: var(--red-med);
+    animation: pressprogress-animation 2s forwards;
+}
+
+@keyframes pressprogress-animation {
+    0% {
+        width: 0%;
+        background-color: var(--red-med);
+    }
+
+    100% {
+        width: calc(var(--press_rating)*10%);
+        background-color: var(--pressbar-color);
+    }
+}
+
+.humidity .progress-bar {
+    height: 100%;
+    border-radius: 1.5rem;
+    background-color: var(--red-med);
+    animation: humidprogress-animation 2s forwards;
+}
+
+@keyframes humidprogress-animation {
+    0% {
+        width: 0%;
+        background-color: var(--red-med);
+    }
+
+    100% {
+        width: calc(var(--humid_rating)*10%);
+        background-color: var(--humidbar-color);
+    }
+}
+
+/*
+=============== 
+Graphs
+===============
+*/
+.graphs {
+    display: block;
+    width: 100vw;
+    height: calc(50vh - (5rem));
+}
+.graph-container{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+.graph {
+    width: 100%;
+    height: 100%;
+}
+.graph-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.temp-graph-btn,
+.press-graph-btn,
+.humid-graph-btn {
+    cursor: pointer;
+    color: var(--black);
+    background: var(--grey-100);
+    border: transparent;
+    border-radius: var(--borderRadius);
+    letter-spacing: var(--letterSpacing);
+    padding: 0.25rem 0.25rem;
+    margin: 0 0.5rem;
+    box-shadow: var(--shadow-1);
+    transition: var(--transitionfast);
+    text-transform: capitalize;
+    display: inline-block;    
+}
+.temp-graph-btn.active,
+.press-graph-btn.active,
+.humid-graph-btn.active {
+    background-color: var(--grey-300);
+}
+
+/*
+=============== 
+Settings
+===============
+*/
+
+.wifi-header{
+    border-bottom: 1px solid var(--grey-500);
+}
+#dc-btn{
+    margin-top: 1rem;
+}
+
+/*
+=============== 
+Media Query
+===============
+*/
+@media screen and (min-width:992px) {
+  .navbar {
+    width: 50%;
+  }
+
+  .container {
+    width: 50%;
+  }
+
+  .card {
+    flex-direction: row;
+  }
+
+  .temperature,
+  .pressure,
+  .humidity {
+    width: 50%;
+  }
+
+  .rating {
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+
+  tr {
+    display: table-row;
+    visibility: collapse;
+  }
+
+  .temperature:hover,
+  .pressure:hover,
+  .humidity:hover {
+    width: 90%;
+  }
+
+  .temperature:hover .card-info,
+  .pressure:hover .card-info,
+  .humidity:hover .card-info {
+    margin-right: 1rem;
+    transition: var(--transitionslow);
+  }
+
+  .temperature.active .card-info,
+  .pressure.active .card-info,
+  .humidity.active .card-info {
+    margin-right: 1rem;
+    transition: var(--transitionslow);
+  }
+
+  .temperature:hover .rating,
+  .pressure:hover .rating,
+  .humidity:hover .rating {
+    display: block;
+    flex-basis: 100%;
+    animation: fade-animation 1s forwards;
+  }
+
+  .temperature.active .rating,
+  .pressure.active .rating,
+  .humidity.active .rating {
+    animation: fade-animation 1s forwards;
+  }
+
+  .temperature:hover tr,
+  .pressure:hover tr,
+  .humidity:hover tr {
+    visibility: visible;
+    /*visiblity is set to visible when both hovering and clicking
+        but display is only set to table-row when clicking because desktop display is set to table-row to perserve transition*/
+    opacity: 100%;
+    transition: var(--transitionslow);
+    transition-delay: 0.6s;
+  }
+
+  .progress-container {
+    margin-top: 1.5rem;
+  }
+
+  .progress-bar {
+    margin-bottom: 0;
+  }
+
+  .temperature:hover .progress-container,
+  .temperature.active .progress-container,
+  .pressure:hover .progress-container,
+  .pressure.active .progress-container,
+  .humidity:hover .progress-container,
+  .humidity.active .progress-container {
+    width: 70%;
+  }
+
+  .graphs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: calc(50vh - (5rem));
+  }
+
+  .graph-container {
+    width: 45%;
+  }
+
+  .graph {
+    width: 100%;
+    height: 100%;
+  }
+}
